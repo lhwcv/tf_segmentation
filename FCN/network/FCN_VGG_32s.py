@@ -16,6 +16,7 @@ def FCN_vgg_32s(image_batch,is_training,weight_decay=0.0005, num_classes=21):
                                          spatial_squeeze=False,
                                          fc_conv_padding='SAME')
         logits_shape=tf.shape(logits)
+
         output_shape=tf.stack([logits_shape[0],
                               logits_shape[1]*upsample_ratio,
                               logits_shape[2]*upsample_ratio,
